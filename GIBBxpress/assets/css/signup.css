@@ -1,0 +1,296 @@
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  font-family: Times New Roman;
+}
+
+.fixed-nav-bar li, .fixed-nav-bar a { 
+  height: 40px;
+  line-height: 50px;
+}
+.menu {
+  width: 100%;
+  max-width: 960px;
+  margin: 7 auto;
+  float: right;
+}
+.menu a, .menu a:visited {
+  color: #ffffff;
+}
+.menu a:hover, .menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+  float: right;
+  margin-right: 50px;
+  font-size: 17px;
+  margin-top: 5px;
+}
+.sitename {
+  margin-right: 0px;
+  margin-left: 0px;
+  float: left;
+}
+a.sitename, a:visited.sitename {
+  color: red;
+}
+.menu-items li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-items a {
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .menu { 
+    position: relative;
+    width: 100%;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none; 
+    width: 100%;
+    margin-top: 50px;
+    background-color: #008378;
+
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show, .hide {  
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide, #menu:target .menu-items {
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 220px) {
+  .sitename, .show, .hide {
+    font-size: 14px;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: rgb(33,145,172);
+      background: linear-gradient(90deg, rgba(33,145,172,1) 48%, rgba(0,255,196,1) 100%); 
+}
+
+::selection {
+  color: #fff;
+  background: #1c87c9;
+}
+
+.container {
+  width: 330px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+  box-shadow: 10px 10px 5px grey;
+}
+.container header {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form {
+  width: 400%;
+  display: flex;
+
+}
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+
+}
+
+.form-outer form .page .title{
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+.form-outer form .page .field{
+  width: 330px;
+  height: 45px;
+  margin :45px 0;
+  display: flex;
+  position: relative;
+}
+
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+
+}
+
+form .page .field button{
+  width: 100%;
+  height: calc(100% +
+   5px);
+   border: 2px solid #1c87c9;
+  background: #1c87c9;
+  border-radius:5px;
+  margin-top: -20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+
+}
+
+form .page .btn button{
+  margin-top: -20px!important;
+}
+form .page .field button:hover{
+  background-color: white;
+  
+      color: #1c87c9;
+      cursor: pointer;
+}
+form .page .btn button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+.container .progress-bar {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container .progress-bar .step {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.container .progress-bar .step p {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #000;
+}
+.progress-bar .step .bullet {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active {
+  border-color: #1c87c9;
+  background: #1c87c9;
+}
+.progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+  position: absolute; content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after {
+  background: #1c87c9;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear-forwards;
+}
+@keyframes animate{
+  100% {
+    transform: scaleX(1);
+
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+
+}
+.progress-bar .step p.active {
+  color: #1c87c9;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
